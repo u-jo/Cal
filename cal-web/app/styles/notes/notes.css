@@ -1,0 +1,14 @@
+#note{
+    height: 100%;
+    width: 100%;
+    border: none;
+    line-height: 17px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    outline: 1px;
+}
+
+.pad {
+    height: 100%;
+}

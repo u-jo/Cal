@@ -1,0 +1,17 @@
+<div class="full-height row">
+	<div class="main-calendar-container col-md-7">
+		<div calendar></div>
+	</div>
+	<div class="height-100 pad-right-0 col-md-5">
+		<div class="row main-tab-container">
+			<ul>
+		        <li class="main-tab-item" ng-repeat="t in tabs" ui-sref="{{t.route}}" ui-sref-active="active">
+		        	{{t.heading}}
+		        </li>
+		    </ul>
+		</div>
+		<div class="height-100 row">
+			<div class="height-100" ui-view></div>
+		</div>
+	</div>
+</div>

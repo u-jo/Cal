@@ -1,0 +1,21 @@
+.calendar-container {
+	margin-top: 50p
+}
+
+.calendar-month {
+	margin-top: 40px;
+}
+
+.day-headers .day.header {
+	margin-bottom: 0px;
+}
+.day-headers .day.header {
+	border-bottom: none;
+	background-color: #ccc;
+	display: block;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+.today {
+}
