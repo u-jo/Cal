@@ -5,8 +5,10 @@
 .start-now-button {
   border-radius: 30px;
   margin-top: 8px;
-  margin-bottom: 8px;
   background: white;
+}
+.navbar {
+  margin-bottom: 0px;
 }
 .nav h1{
   font-size:1em;
