@@ -12,13 +12,19 @@ angular
 	.module('calWebApp', [
 	'ngCookies',
 	'ngResource',
-	'ui.router'
+	'ui.router',
+	'ui.bootstrap'
 ])
 .config(function($stateProvider, $urlRouterProvider) {
 //
 // For any unmatched url, redirect to /state1
 	$urlRouterProvider.otherwise('/');
-	//
+	// Static pages
+	$stateProvider.state('home', {
+		url: '/',
+		templateUrl: '/views/main.html',
+		controller: 'MainCtrl'
+	});
 	// Now set up the states
 	$stateProvider
 		.state('calendar', {

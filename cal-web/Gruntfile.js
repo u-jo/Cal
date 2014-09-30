@@ -20,7 +20,7 @@ module.exports = function (grunt) {
   // Configurable paths for the application
   var appConfig = {
     app: require('./bower.json').appPath || 'app',
-    dist: '../public'
+    dist: 'dist'
   };
 
   grunt.loadNpmTasks('grunt-connect-proxy');
@@ -190,8 +190,8 @@ module.exports = function (grunt) {
         src: [
           '<%= yeoman.dist %>/scripts/{,*/}*.js',
           '<%= yeoman.dist %>/styles/{,*/}*.css',
-          '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
-          '<%= yeoman.dist %>/styles/fonts/*'
+          '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
+          //'<%= yeoman.dist %>/styles/fonts/*'
         ]
       }
     },
@@ -325,7 +325,7 @@ module.exports = function (grunt) {
             '*.html',
             'views/{,*/}*.html',
             'images/{,*/}*.{webp}',
-            'fonts/*'
+            'styles/fonts/{,*/}*.*',
           ]
         }, {
           expand: true,
@@ -335,6 +335,11 @@ module.exports = function (grunt) {
         }, {
           expand: true,
           cwd: 'bower_components/bootstrap/dist',
+          src: 'fonts/*',
+          dest: '<%= yeoman.dist %>'
+        },{
+          expand: true,
+          cwd: 'bower_components/ionicons',
           src: 'fonts/*',
           dest: '<%= yeoman.dist %>'
         }]

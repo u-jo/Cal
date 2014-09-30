@@ -10,6 +10,8 @@
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="bower_components/ionicons/css/ionicons.css" />
+    <link rel="stylesheet" href="bower_components/pure/pure.css" />
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -18,10 +20,13 @@
     <link rel="stylesheet" href="styles/calendar.css">
     <link rel="stylesheet" href="styles/calendar/mainCalendar.css">
     <link rel="stylesheet" href="styles/notes/notes.css">
+    <link rel="stylesheet" href="styles/nav/nav.css">
+    <link rel="stylesheet" href="styles/login/loginPopup.css">
     <!-- endbuild -->
 
     <!-- fonts -->
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
     <!-- endfonts -->
   </head>
   <body ng-app="calWebApp">
@@ -59,6 +64,7 @@
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -70,6 +76,7 @@
         <script src="scripts/controllers/maincalendar.js"></script>
         <script src="scripts/controllers/schedule.js"></script>
         <script src="scripts/directives/notepad.js"></script>
+        <script src="scripts/controllers/login.js"></script>
         <!-- endbuild -->
 </body>
 </html>
