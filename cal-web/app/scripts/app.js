@@ -34,24 +34,37 @@ angular
 			controller: 'MainCalendarCtrl'
 		})
 		.state('calendar.schedule', {
-			url: '/schedule',
+			url: '/schedule/:id',
 			templateUrl: '/views/calendar/schedule.html',
 			controller: 'ScheduleCtrl'
 		})
 		.state('calendar.notes', {
-			url: '/notes',
+			url: '/notes/:id',
 			templateUrl: '/views/calendar/notes.html',
 		})
 		.state('calendar.wall', {
-			url: '/wall',
+			url: '/wall/:id',
 			templateUrl: '/views/calendar/wall.html'
 		}).
 		state('calendar.tasklist', {
-			url: '/tasklist',
+			url: '/tasklist/:id',
 			templateUrl: '/views/calendar/tasklist.html'
 		});
 })
-.run(function ($resource) {
-	// var csrfVerify = $resource('/api/csrf-verify.json');
-	// csrfVerify.get();
+.run(function ($rootScope, $resource, $state, $stateParams, authenticationService) {
+	var csrfVerify = $resource('/api/csrf-verify.json');
+	csrfVerify.get();
+
+	$rootScope.$on('$stateChangeStart', function(event, toState, toStateParams) {
+        if (!toStateParams.id) {
+        	$state.go('home');
+        }
+        // if (toState == 'calendar.schedule' || toState == 'calendar.notes' || toState == 'calendar.wall' || toState == 'calendar.tasklist') {
+        // 	authenticationService.isAuthenticated(toStateParams.id).then(function(response) {
+        // 		if (!response.success) {
+        // 			$state.go('home');
+        // 		}
+        // 	});
+        // }
+    });
 });

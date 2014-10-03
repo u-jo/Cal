@@ -65,6 +65,29 @@ span[class ^= "icon"]{
   transition: all 0.3s linear;
 }
 
+.nav li.dropdown-link {
+  background: white;
+}
+
+.nav li.dropdown-link:hover {
+  background: white;
+}
+
+.open a.dropdown-toggle {
+  border-left: none;
+  border-top: none;
+}
+a.dropdown-toggle {
+  border-left: none;
+  border-top: none;
+}
+
+li:not(.active):hover a,
+.dropdown-menu > li > a:hover, 
+.dropdown-menu > li > a:focus {
+  color: none;
+  background-color: none;
+}
 @media only screen and (max-width : 860px){
   
   .text{

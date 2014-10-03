@@ -8,7 +8,7 @@
  * Controller of the calWebApp
  */
 angular.module('calWebApp')
-  .controller('LoginCtrl', function ($scope, $modalInstance, log, logIn, signUp) {
+  .controller('LoginCtrl', function ($scope, $modalInstance, $http, $state, log, logIn, signUp, signupService, loginService) {
     $scope.logIn = logIn;
   	$scope.signUp = signUp;
   	$scope.user = {};
@@ -27,6 +27,9 @@ angular.module('calWebApp')
     		password: $scope.user.password
     	};
     	// TODO Login
+      loginService.login(userLogin).then(function(response) {
+        $state.go('calendar.schedule', {id: response.user.id});
+      });
     	$modalInstance.close();
     };
 
@@ -37,7 +40,9 @@ angular.module('calWebApp')
             password: $scope.user.signupPassword,
             password_confirmation: $scope.user.signupPassConfirm
         };
-        // TODO SIGNUP
+        signupService.signup(user).then(function(response) {
+          $state.go('calendar.schedule', {id: response.user.id});
+        });
         $modalInstance.close();
     };
-  });
+});

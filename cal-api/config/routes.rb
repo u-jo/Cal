@@ -1,14 +1,18 @@
 Rails.application.routes.draw do
-  get 'users/new'
+
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
   namespace :api do
-    get '/csrf-verify' => 'csrf_responder#index'
+    get '/csrf-verify' => 'csrf_responder#index' 
+    devise_for :users, :controllers => { :sessions => 'sessions', :registrations => 'registrations', :passwords => 'devise/passwords'}
+    get '/authenticated' => 'sessions#is_right_authentication_token'
   end
+
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

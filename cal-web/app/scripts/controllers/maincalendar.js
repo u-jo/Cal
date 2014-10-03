@@ -8,7 +8,7 @@
  * Controller of the calWebApp
  */
 angular.module('calWebApp')
-  .controller('MainCalendarCtrl', function ($scope, $state, $log) {
+  .controller('MainCalendarCtrl', function ($scope, $state, $log, loginService) {
   	$scope.$on('$viewContentLoaded', function() {
   		$log.log('MainCalendarCtrl loaded');
   	});
@@ -21,6 +21,13 @@ angular.module('calWebApp')
   	$scope.activeTab = function() {
   		return $state.current.name;
   	}
+
+    $scope.signout = function() {
+      loginService.logout().then(function() {
+        $state.go('home');
+      });
+      
+    };
 
   	
 

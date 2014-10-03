@@ -1,4 +1,6 @@
 class Api::CsrfResponderController < ApplicationController
+	skip_before_filter :authenticate_user!
+	skip_before_filter :authenticate_user_from_token!
 	RESPONSE = "verified"
 	def index
 		response = Hash.new
