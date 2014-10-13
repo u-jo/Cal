@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :api_notes, depedent: :destroy
+  has_many :notes, dependent: :destroy, :foreign_key => :user_id
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
